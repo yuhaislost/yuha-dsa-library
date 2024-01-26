@@ -7,8 +7,8 @@ set(LOCAL_PROJECT_NAME "YuhaDSA")
 set(LOCAL_PROJECT_VERSION "0.0.1")
 set(LOCAL_PROJECT_DESCRIPTION "A datastructures and algorithms library")
 
-set(HEADERS )
-set(SOURCES )
+set(HEADERS vector.hpp linkedlist.hpp utils.hpp)
+set(SOURCES vector.cpp linkedlist.cpp utils.cpp)
 set(DEFINES )
 set(OPTIONS )
 

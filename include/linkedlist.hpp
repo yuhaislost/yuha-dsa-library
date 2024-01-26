@@ -2,6 +2,7 @@
 #include <utility>
 
 namespace Yuha {
+    
     template<typename T>
     struct SingleNode {
         SingleNode<T>* mNext;
@@ -12,10 +13,13 @@ namespace Yuha {
 
     template<typename T>
     struct DoubleNode {
-        T* mNext;
-        T* mPrev;
+        SingleNode<T>* mNext;
+        SingleNode<T>* mPrev;
         T mValue;
+
+        DoubleNode();
     };
+    
 
     template <typename T>
     class SingleLinkedList {
@@ -44,6 +48,38 @@ namespace Yuha {
 
             SingleNode<T>* mHead;
             SingleNode<T>* mTail;
+
+    };
+
+    template <typename T>
+    class DoubleLinkedList {
+
+        public:
+            DoubleLinkedList();
+
+            const DoubleNode<T>* insertFront(const T& pData);
+            const DoubleNode<T>* insertBack(const T& pData);
+            const DoubleNode<T>* insertFront(T&& pData);
+            const DoubleNode<T>* insertBack(T&& pData);
+            const DoubleNode<T>* peakFront() const;
+            DoubleNode<T>* peakFront();
+            const DoubleNode<T>* peakBack() const;
+            DoubleNode<T>* peakBack();
+            const DoubleNode<T>* findValue(const T& pValue) const;
+            DoubleNode<T>* findValue(const T& pValue);
+            void deleteNode(DoubleNode<T>* pNode);
+            void popback();
+            void popfront();
+
+            void print();
+            void printReverse();
+
+            ~DoubleLinkedList();
+
+        private:
+
+            DoubleNode<T>* mHead;
+            DoubleNode<T>* mTail;
 
     };
 
